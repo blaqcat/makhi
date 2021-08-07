@@ -135,21 +135,6 @@ class _LoginState extends State<Login> {
                           onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen())),
                           child: Text("Register"),
                   ),
-                  SizedBox(height: 20),
-                  if(loginProvider.errorMessage != null)
-                    Container(
-                      padding:
-                      EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      color: Colors.amberAccent,
-                      child: ListTile(
-                        title: Text(loginProvider.errorMessage),
-                        leading: Icon(Icons.error),
-                        trailing: IconButton(
-                          icon: Icon(Icons.close),
-                          onPressed: () => loginProvider.setMessage(null),
-                        ),
-                      ),
-                    ),
 
                 ],
               ),

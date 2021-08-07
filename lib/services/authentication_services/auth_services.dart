@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:makhi/screens/homeScreens/home_screen.dart';
 
 
 class AuthServices extends ChangeNotifier {
@@ -14,17 +15,17 @@ class AuthServices extends ChangeNotifier {
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   Future register(String email, String password) async {
-    setLoading(true);
+
     try{
+      setLoading(true);
       UserCredential authResult= await firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
-      User  user = authResult.user;
       setLoading(false);
+      User  user = authResult.user;
       return user;
     } on SocketException {
       setLoading(false);
       setMessage("No internet, please connect to the internet");
-    }
-    catch(e) {
+    } catch(e) {
       setLoading(false);
       print(e);
       setMessage(e.message);
@@ -37,8 +38,8 @@ class AuthServices extends ChangeNotifier {
     try{
       setLoading(true);
       UserCredential authResult= await firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
-      User  user = authResult.user;
       setLoading(false);
+      User user = authResult.user;
       return user;
     } on SocketException {
       setLoading(false);
@@ -47,7 +48,6 @@ class AuthServices extends ChangeNotifier {
     catch(e) {
       setLoading(false);
       print(e);
-
       setMessage(e.message);
     }
     notifyListeners();
@@ -73,8 +73,7 @@ class AuthServices extends ChangeNotifier {
     notifyListeners();
   }
 
-  Stream<User> get user =>
-      firebaseAuth.authStateChanges().map((event) => event);
+  Stream<User> get user => firebaseAuth.authStateChanges();
 
 }
 

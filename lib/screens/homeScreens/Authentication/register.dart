@@ -68,7 +68,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   SizedBox(height: 30),
                   TextFormField(
                     controller: _emailController,
-                    validator: (val) => EmailValidator.validate(val) ? null : "Please enter a valid email address",
+                    validator: (val) =>
+                    EmailValidator.validate(val)
+                        ? null
+                        : "Please enter a valid email address",
                     decoration: InputDecoration(
                       hintText: "Email",
                       prefixIcon: Icon(Icons.mail),
@@ -80,7 +83,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   SizedBox(height: 30),
                   TextFormField(
-                    validator: (val) => val.length < 6 ? "Enter more than 6  characters": null,
+                    validator: (val) =>
+                    val.length < 6
+                        ? "Enter more than 6  characters"
+                        : null,
                     controller: _passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
@@ -94,36 +100,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   SizedBox(height: 30),
                   MaterialButton(
-                    onPressed: () async{
-                      if (_formkey.currentState.validate()){
-                        print("Email: ${_emailController})");
-                        print("Password: ${_passwordController})");
-                        await loginProvider.register(
-                            _emailController.text.trim(),
-                            _passwordController.text.trim()
-                        );
-                      }
-                    },
-                    height: 70,
-                    minWidth: loginProvider.isLoading ? null : double.infinity,
-                    color: Theme.of(context).primaryColor,
-                    textColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: loginProvider.isLoading
-                        ? CircularProgressIndicator(
-                          valueColor: new AlwaysStoppedAnimation<Color>(
-                              Colors.white),
-
-                    )
-                        : Text(
-                            "Register",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold
+                      onPressed: () async {
+                        if (_formkey.currentState.validate()) {
+                          print("Email: ${_emailController})");
+                          print("Password: ${_passwordController})");
+                          await loginProvider.register(
+                              _emailController.text.trim(),
+                              _passwordController.text.trim()
+                          );
+                        }
+                      },
+                      height: 70,
+                      minWidth: loginProvider.isLoading ? null : double
+                          .infinity,
+                      color: Theme
+                          .of(context)
+                          .primaryColor,
+                      textColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                    ),
+                      child: loginProvider.isLoading
+                          ? CircularProgressIndicator(
+                        valueColor: new AlwaysStoppedAnimation<Color>(
+                          Colors.white,
+                        ),
+                      )
+                          : Text(
+                        "Register",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
                   ),
                   SizedBox(height: 20),
                   Row(
@@ -132,26 +141,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Text("Already have an account?"),
                       SizedBox(width: 5),
                       TextButton(
-                          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Login())),
-                          child: Text("Login"),
+                        onPressed: () =>
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context) => Login())),
+                        child: Text("Login"),
                       )
                     ],
                   ),
                   SizedBox(height: 20),
                   if(loginProvider.errorMessage != null)
                     Container(
-                      padding:
-                        EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                       color: Colors.amberAccent,
                       child: ListTile(
                         title: Text(loginProvider.errorMessage),
                         leading: Icon(Icons.error),
                         trailing: IconButton(
-                            icon: Icon(Icons.close),
-                            onPressed: () => loginProvider.setMessage(null),
-                            ),
+                          icon: Icon(Icons.close),
+                          onPressed: () => loginProvider.setMessage(null),
+                        ),
                       ),
-                    ),
+                    )
                 ],
               ),
             ),
