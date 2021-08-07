@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "732717215504",
+    "project_id": "maki-network",
+    "storage_bucket": "maki-network.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732717215504:android:6f75e09aa0efd0fe457f95",
+        "android_client_info": {
+          "package_name": "com.example.makhi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732717215504-hcds09md0g0p67h806rko8gos8phn9aa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLeDYc4TDfFpmHA6g9Mbf3t5oiMYSEsGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732717215504-hcds09md0g0p67h806rko8gos8phn9aa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
