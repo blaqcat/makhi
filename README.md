@@ -1,16 +1,15 @@
 # makhi
 
-A new Flutter project.
+The Makhi Network Phase1 by Jerry Monyelo Programming Language: Flutter Team: Black Cat MTN Business Hackathon 2021
 
-## Getting Started
+Goal: To create a viable Black business Directory for Black Businesses
 
-This project is a starting point for a Flutter application.
+Phases:
 
-A few resources to get you started if this is your first Flutter project:
+Register and Login : Completed Splash screen: Working On
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Profiles: Still to be Done
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Home Page: In progress
+
+Current Issues: Email Verification for Resistered Users

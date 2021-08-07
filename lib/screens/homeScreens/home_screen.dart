@@ -14,25 +14,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-     final loginProvider = Provider.of<AuthServices>(context);
-     return Scaffold(
-        appBar: AppBar(
-          title: Text("Home Page"),
-          actions: [
-            IconButton(icon: Icon(Icons.exit_to_app),
-              onPressed: () async => await loginProvider.logout(),
-
+    final loginProvider = Provider.of<AuthServices>(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Makhi Home Page"),
+        centerTitle: true,
+        actions: [
+          IconButton(icon: Icon(Icons.exit_to_app),
+          onPressed: () async => await loginProvider.logout(),
           )
         ],
       ),
-     );
+    );
   }
 }
+
+
+
