@@ -1,8 +1,11 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:makhi/screens/homeScreens/Authentication/register.dart';
+import 'package:makhi/screens/splashScreen/onboarding.dart';
 import 'package:makhi/services/authentication_services/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../home_screen.dart';
 
 class Login extends StatefulWidget {
   final Function toggleScreen;
@@ -48,7 +51,14 @@ class _LoginState extends State<Login> {
                     icon: Icon(
                         Icons.arrow_back_ios,
                         color: Theme.of(context).primaryColor),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => Onbording(),
+                        ),
+                      );
+                    },
                   ),
                   SizedBox(height: 60),
                   Text(
@@ -98,7 +108,7 @@ class _LoginState extends State<Login> {
                         print("Email: $_passwordController");
                         await loginProvider.login(
                           _emailController.text.trim(),
-                          _passwordController.text.trim()
+                          _passwordController.text.trim(),
 
                         );
 

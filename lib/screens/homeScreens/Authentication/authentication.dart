@@ -13,7 +13,8 @@ class _AuthenticationState extends State<Authentication> {
   void toggleScreen () {
     setState(() {
       isToggle = !isToggle;
-    });
+    }
+    );
   }
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,6 @@ class _AuthenticationState extends State<Authentication> {
     }else{
       return Login(toggleScreen: toggleScreen);
     }
-
 
   }
 }

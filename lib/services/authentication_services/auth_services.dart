@@ -19,8 +19,8 @@ class AuthServices extends ChangeNotifier {
     try{
       setLoading(true);
       UserCredential authResult= await firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
-      setLoading(false);
       User  user = authResult.user;
+      setLoading(false);
       return user;
     } on SocketException {
       setLoading(false);
@@ -34,12 +34,13 @@ class AuthServices extends ChangeNotifier {
 
   }
 
+
   Future login(String email, String password) async {
     try{
       setLoading(true);
       UserCredential authResult= await firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
-      setLoading(false);
       User user = authResult.user;
+      setLoading(false);
       return user;
     } on SocketException {
       setLoading(false);
@@ -73,7 +74,8 @@ class AuthServices extends ChangeNotifier {
     notifyListeners();
   }
 
-  Stream<User> get user => firebaseAuth.authStateChanges();
+  Stream<User> get user => firebaseAuth.authStateChanges() ;
+
 
 }
 

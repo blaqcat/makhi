@@ -1,4 +1,5 @@
 import 'package:makhi/screens/homeScreens/Authentication/login.dart';
+import 'package:makhi/screens/homeScreens/home_screen.dart';
 import 'package:makhi/services/authentication_services/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -108,6 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               _emailController.text.trim(),
                               _passwordController.text.trim()
                           );
+                          return HomeScreen();
                         }
                       },
                       height: 70,

@@ -1,3 +1,4 @@
+import 'package:makhi/screens/homeScreens/home_screen.dart';
 import 'package:makhi/screens/splashScreen/onboarding.dart';
 import 'package:makhi/services/authentication_services/auth_services.dart';
 import 'package:flutter/material.dart';
@@ -24,14 +25,14 @@ class MyApp extends StatelessWidget {
                 StreamProvider<User>.value(
                     value: AuthServices().user,
                     initialData: null)
-              
+
               ],
               child: MaterialApp(
                 theme: ThemeData(
                   primarySwatch: Colors.red,
                 ),
                 debugShowCheckedModeBanner: false,
-                home: Onbording(),
+                home: Wrapper(),
               ),
             );
           } else {

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:makhi/screens/homeScreens/Authentication/login.dart';
 import 'package:makhi/screens/homeScreens/Authentication/register.dart';
+import 'package:makhi/screens/homeScreens/home_screen.dart';
 import 'package:makhi/screens/splashScreen/content_model.dart';
 import 'package:makhi/screens/wrapper.dart';
 //import 'package:unbording/home.dart';
+import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class Onbording extends StatefulWidget {
   @override
@@ -11,6 +15,7 @@ class Onbording extends StatefulWidget {
 }
 
 class _OnbordingState extends State<Onbording> {
+
   int currentIndex = 0;
   PageController _controller;
 
@@ -28,6 +33,7 @@ class _OnbordingState extends State<Onbording> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<User>(context);
     return Scaffold(
       body: Column(
         children: [
@@ -92,7 +98,7 @@ class _OnbordingState extends State<Onbording> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => Login(),
+                      builder: (user) => HomeScreen(),
                     ),
                   );
                 }
