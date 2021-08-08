@@ -1,4 +1,8 @@
 import 'package:makhi/screens/homeScreens/Authentication/authentication.dart';
+import 'package:makhi/screens/homeScreens/NavigationBar/home_page.dart';
+import 'package:makhi/screens/homeScreens/NavigationBar/profile.dart';
+import 'package:makhi/screens/homeScreens/NavigationBar/search.dart';
+import 'package:makhi/screens/homeScreens/NavigationBar/tools.dart';
 import 'package:makhi/screens/splashScreen/onboarding.dart';
 import 'package:makhi/services/authentication_services/auth_services.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +19,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   final screens = [
-    Center(child: Text('Home', style: TextStyle(fontSize: 60)),),
-    Center(child: Text('Search', style: TextStyle(fontSize: 60)),),
-    Center(child: Text('Business Tools', style: TextStyle(fontSize: 60)),),
-    Center(child: Text('Profile', style: TextStyle(fontSize: 60)),),
+    HomePage(),
+    SearchPage(),
+    ToolsPage(),
+    ProfileView(),
 
 
   ];
