@@ -6,10 +6,9 @@ class ToolsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Title'),
+        title: Text('Tools'),
       ),
-      body: Center(
-        child: Text('Tools', style: TextStyle(fontSize: 60) ,),
+      body: Center(child: Text('Tools', style: TextStyle(fontSize: 60) ,),
       ),
     );
   }

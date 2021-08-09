@@ -7,6 +7,7 @@ import 'package:makhi/screens/splashScreen/onboarding.dart';
 import 'package:makhi/services/authentication_services/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:get_it/get_it.dart';
 
 
 
@@ -29,25 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final loginProvider = Provider.of<AuthServices>(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text('The Makhi Network'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.exit_to_app),
-            onPressed: ()  async => await loginProvider.logout()
-          )
-        ],
-        centerTitle: true,
-      ),
-      body: IndexedStack(
-        index: currentIndex,
-        children: screens,
-      ),
+      body: screens[currentIndex] ,
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-
         backgroundColor: Colors.blue,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white70,
